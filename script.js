@@ -6,6 +6,7 @@ snake[0] = {
     x: 8 * box,
     y: 8 * box
 }
+
 let direction = "right";
 let food = {
     x: Math.floor(Math.random() * 15 + 1) * box,
@@ -13,20 +14,27 @@ let food = {
 }
 
 function criarBG() {
-    context.fillStyle = "lightgreen";
+    //context.fillStyle = "lightgreen";
+    context.fillStyle = "#100e17";
+    //context.fillStyle = "#9bba5a";
+    //context.fillStyle = "#6bd82b";
     context.fillRect(0, 0, 16 * box, 16 * box);
 }
 
 function criarCobrinha() {
     for(i = 0; i < snake.length; i++){
-        context.fillStyle = "green";
+        context.fillStyle = "#585858";
+        //context.fillStyle = "rgba(0,0,0,.75)"
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
 
 function drawFood(){
-    context.fillStyle = "red";
+    //context.fillStyle = "rgb(241, 59, 59)";
+    //context.fillStyle = "rgba(0,0,0,.75)";
+    context.fillStyle = "#6bd82b";
     context.fillRect(food.x, food.y, box, box);
+    /*animation:appear 200ms cubic-bezier(.5,1,0,1.6),spin 3.5s cubic-bezier(.2,.6,.4,1) 200ms*/
 }
 
 document.addEventListener('keydown', update);
